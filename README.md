@@ -18,6 +18,7 @@ To convert this business framing to a data problem, the task is building predict
 3) GridSearchCV was attempted for the linear models.  This required a very long compute time, and only the Ridge model parameter of Alpha = 10 was obtained. Attempts to get other best parameters did not work as GidSearchCV did not converge with the allotted compute power after several iteration increases.
 4) Decision Tree model performed much better than the Linear Models, capturing non-linear relationships in the data, with 82% accuracy based on the R² score of 0.82. Test RMSE was also slightly better = 6154
 5) Random Forest model performed the best by reducing overfitting and averaging multiple trees with 89% accuracy.  Test RMSE was also slightly better than Decision Tree, and almost half the value of the RMSE error of the Linear Models. Test RMSE = 4859.
+6) XGBoost performed similarly to Decision Tree with R² score of 0.82 and Test RMSE = 6223
 
 ### Linear Regression:
 - Mean CV RMSE: 8934.51
