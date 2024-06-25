@@ -4,7 +4,7 @@
 
 From a business perspective, the task is to identify the key drivers for used car prices to help the dealership make informed decisions about pricing and inventory management. Understanding what features (such as car age, mileage, and manufacturer) influence the price of a used car will enable the dealership to set competitive prices and prioritize the acquisition of high-demand vehicles. The CRISP-DM framework was followed to systematically approach the data analysis and modeling:
 
-## Business Problem Re-defined as a Data Problem:
+## Business Problem Redefined as ML Data Problem:
 To convert this business framing to a data problem, the task is building predictive models to estimate the price of a used car based on various features. This involves:
 - Feature Selection and Engineering: Identifying relevant features such as year, odometer, manufacturer, model, condition, cylinders, fuel type, transmission, drive type, size, type, paint color, and state.
 - Data Cleaning and Preprocessing: Handling missing values and outliers, splitting data into training (80%) and test sets (20%), encoding categorical variables, scaling numerical features.
