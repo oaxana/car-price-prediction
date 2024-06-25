@@ -73,6 +73,7 @@ Based on the coefficients from the Linear Regression model, we can derive insigh
 ### Manufacturer (ferrari - 0.011035)
 - The manufacturer, specifically Ferrari in this case, is an important determinant of car price. Luxury brands like Ferrari generally command higher prices due to their brand value, performance, and exclusivity.
 
+## Summary Of Model Performances
 
 ### Linear Regression:
 - Mean CV RMSE: 8934.51
@@ -105,8 +106,20 @@ Based on the coefficients from the Linear Regression model, we can derive insigh
 - R²: 0.82
 
 
-Interpret the coefficients and feature importances of the models.
-Assess the models using RMSE and R² metrics.
+### Actionable Recommendations:
+TBD -- Provide actionable insights and recommendations based on the model findings.
 
-## Actionable Recommendations:
-Provide actionable insights and recommendations based on the model findings.
+Further Analysis: Conduct deeper analysis on non-linear models like Decision Trees, Random Forests, and XGBoost to capture more complex relationships and improve prediction accuracy.
+Feature Engineering: Explore additional features and interactions between existing features to enhance model performance.
+Hyperparameter Tuning: Fine-tune model parameters to achieve better results.
+Implementation: Use the insights from the analysis to adjust pricing strategies, inventory management, and marketing efforts to optimize sales and profitability.
+
+Feature Importances: Random Forest provides a clear view of which features are most important, helping to understand the key drivers of car prices.
+Model Performance Metrics: Evaluation metrics like RMSE (Root Mean Squared Error) and R² (coefficient of determination) should be used to assess the model's accuracy.
+Non-Linear Relationships: Random Forest captures non-linear relationships and interactions between features, making it suitable for complex datasets like used car prices.
+Model Stability: Random Forest is generally robust and less prone to overfitting compared to single decision trees, leading to more reliable predictions.
+
+
+Hyperparameter Tuning: Optimize the model parameters to enhance performance.
+Business Insights: Use the findings to inform pricing strategies, inventory management, and marketing efforts. Focus on high-impact features like year, odometer, drive type, and fuel type to maximize sales and profitability.
+Consumer Preferences: Consider market preferences for different manufacturers, vehicle types, and fuel types to better align inventory with demand.
