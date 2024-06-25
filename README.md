@@ -27,16 +27,18 @@ R²: 0.63
 Mean CV RMSE: 8934.65
 Test RMSE: 8845.29
 R²: 0.63
-Non-Linear Models
-Decision Tree:
+
+### Decision Tree:
 Mean CV RMSE: 6432.42
 Test RMSE: 6154.53
 R²: 0.82
-Random Forest:
+
+### Random Forest:
 Mean CV RMSE: 4976.42
 Test RMSE: 4859.50
 R²: 0.89
-XGBoost:
+
+### XGBoost:
 Mean CV RMSE: 6317.70
 Test RMSE: 6223.63
 R²: 0.82
