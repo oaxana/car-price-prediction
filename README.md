@@ -51,6 +51,28 @@ Based on the coefficients from the Linear Regression model, we can derive insigh
 - Full-Size (544.75): Full-size cars increase the price by $544.75, reflecting their higher market value.
 - Mid-Size (290.16): Mid-size cars add $290.16 to the price.
 - Sub-Compact (-30.80): Sub-compact cars decrease the price by $30.80.
+ 
+
+## Notable Findings from Random Forest Feature Importances
+
+### Year (0.403395)
+- The year of the car is the most important feature in predicting its price, contributing to ~40% of the decision making process in the model. This indicates that newer cars are generally valued higher. The high importance suggests that the age of the car significantly influences its market value, as newer models typically have better features, less wear and tear, and more up-to-date technology.
+
+### Odometer (0.138815)
+- The odometer reading is the 2nd most important feature, contributing to ~14% of the decision making process in the model. Higher mileage usually correlates with more wear and tear, reducing the car's value. The importance of this feature highlights how critical mileage is in determining the price of a used car.
+
+### Drive Type (drive_fwd - 0.083800)
+- The drive type, particularly front-wheel drive (FWD), is an important factor. This might be because FWD vehicles are generally more fuel-efficient and offer better traction in various driving conditions, making them more desirable in certain markets.
+
+### Cylinders (cylinders_8 cylinders - 0.027287, cylinders_4 cylinders - 0.015718)
+- The number of cylinders in the engine also plays a role. Eight-cylinder cars typically have higher power and performance, which can be appealing to certain buyers, while four-cylinder engines are often more fuel-efficient and cost-effective.
+
+### Vehicle Type (type_truck - 0.012777)
+- Trucks have a significant impact on the price, suggesting that they are valued differently compared to other types of vehicles, likely due to their utility, durability, and market demand.
+
+### Manufacturer (ferrari - 0.011035)
+- The manufacturer, specifically Ferrari in this case, is an important determinant of car price. Luxury brands like Ferrari generally command higher prices due to their brand value, performance, and exclusivity.
+
 
 ### Linear Regression:
 - Mean CV RMSE: 8934.51
