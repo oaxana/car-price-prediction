@@ -14,43 +14,42 @@ To convert this business framing to a data problem, the task is building predict
 ## Key Findings:
 
 1) 3 linear models were created: Linear Regression, Ridge Regression and Lasso Regression.  Two non-linear models were created: Random Forest and XGBoost. 
-2) All 3 linear models performed similarly and were only 63% accurate, based on the R² score of 0.63. Test RMSE for all 3 models was just under 9000.
+2) All 3 linear models performed similarly and were only 63% accurate, based on the R² score of 0.63. Test RMSE for all 3 models was 8845.
 3) GridSearchCV was attempted for the linear models.  This required a very long compute time, and only the Ridge model parameter of Alpha = 10 was obtained. Attempts to get other best parameters did not work as GidSearchCV did not converge with the allotted compute power after several iteration increases.
-4) Decision Tree model performed much better than the Linear Models, capturing non-linear relationships in the data, with 82% accuracy based on the R² score of 0.82. Test RMSE was also slightly better = 6154
-5) Random Forest model performed the best by reducing overfitting and averaging multiple trees with 89% accuracy.  Test RMSE was also slightly better than Decision Tree, and almost half the value of the RMSE error of the Linear Models. Test RMSE = 4859.
-6) XGBoost performed similarly to Decision Tree with R² score of 0.82 and Test RMSE = 6223
+4) Decision Tree model performed much better than the Linear Models, capturing non-linear relationships in the data, with 82% accuracy based on the R² score of 0.82. Test RMSE was also slightly better = 6188
+5) Random Forest model performed the best by reducing overfitting and averaging multiple trees with 89% accuracy.  Test RMSE was also slightly better than Decision Tree, and almost half the value of the RMSE error of the Linear Models. Test RMSE = 4863.
+6) XGBoost performed similarly to Decision Tree with R² score of 0.82 and Test RMSE = 6224
 
 ## Notable Findings from Analysis of Linear Models Coefficients:
 Based on the coefficients from the Linear Regression model, we can derive insights into how each feature influences the price of a used car. Since the coefficients from the Ridge and Lasso Regression models are similar, we'll focus on the Linear Regression model for this analysis.
 
-### Year (3430.59)
-- For each additional year (newer model year), the price of a car increases by approximately $3430.59. This makes sense as newer cars are typically more valuable.
+### Year (3431)
+- For each additional year (newer model year), the price of a car increases by approximately $3431. This makes sense as newer cars are typically more valuable.
 
 ### Manufacturer
-- Ferrari (1302.56): Being a luxury brand, Ferrari significantly increases the car price by about $1302.56 compared to other manufacturers.
-- Tesla (795.58): Tesla cars also command a higher price, increasing the value by approximately $795.58.
-- Porsche (726.48): Similar to Ferrari and Tesla, Porsche increases the car's price by around $726.48.
-- Other Brands: Brands like GMC, Lexus, and others also show positive coefficients, indicating their positive impact on car prices. On the other hand, manufacturers like Chrysler (-568.20), Kia (-805.66), and Hyundai (-868.52) decrease the price, indicating lower market valuation.
+- Ferrari (1303): Being a luxury brand, Ferrari significantly increases the car price by about $1303 compared to other manufacturers.
+- Tesla (796): Tesla cars also command a higher price, increasing the value by approximately $796.
+- Porsche (726): Similar to Ferrari and Tesla, Porsche increases the car's price by around $726.
+- Other Brands: Brands like GMC, Lexus, and others also show positive coefficients, indicating their positive impact on car prices. On the other hand, manufacturers like Nissan (-931), Kia (-806), and Chrysler (-568) decrease the price, indicating lower market valuation.
 
 ### Type of Vehicle
-- Pickup (926.57): Pickup trucks increase the car's price by approximately $926.57, showing their high demand and value.
-- Truck (818.49): Trucks increase the price by $818.49, similar to pickups.
-- Coupe (689.05): Coupes add about $689.05 to the car's price.
-- Other Types: Types like sedan (-762.61) and hatchback (-623.19) have negative coefficients, indicating they might be valued lower compared to other types.
+- Pickup (927): Pickup trucks increase the car's price by approximately $926.57, showing their high demand and value.
+- Truck (818): Trucks increase the price by $818.49, similar to pickups.
+- Coupe (689): Coupes add about $689.05 to the car's price.
+- Other Types: Types like sedan (-763) and hatchback (-623) have negative coefficients, indicating they might be valued lower compared to other types.
 
 ### Condition of the Car
-- Good Condition (449.79): Cars in good condition are valued $449.79 higher than those in other conditions.
-- New Condition (339.69): New cars add $339.69 to the price, reflecting their higher market value.
-- Salvage Condition (-66.04): Cars in salvage condition decrease the price by $66.04, indicating they are less desirable.
-- Fair Condition (-281.29): Cars in fair condition also decrease the price by $281.29.
+- Good Condition (450): Cars in good condition are valued $450 higher than those in other conditions.
+- New Condition (340): New cars add $340 to the price, reflecting their higher market value.
+- Fair Condition (-281): Cars in fair condition decrease the price by $281.
 
-### Odometer (-6913.09)
-- For every additional unit on the odometer, the car's price decreases by $6913.09. This significant decrease highlights the impact of mileage on car depreciation.
+### Odometer (-6913)
+- For every additional unit on the odometer, the car's price decreases by $6913. This significant decrease highlights the impact of mileage on car depreciation.
 
 ### Size
-- Full-Size (544.75): Full-size cars increase the price by $544.75, reflecting their higher market value.
-- Mid-Size (290.16): Mid-size cars add $290.16 to the price.
-- Sub-Compact (-30.80): Sub-compact cars decrease the price by $30.80.
+- Full-Size (545): Full-size cars increase the price by $545, reflecting their higher market value.
+- Mid-Size (290): Mid-size cars add $290 to the price.
+- Sub-Compact (-31): Sub-compact cars decrease the price by $31.
  
 
 ## Notable Findings from Random Forest Feature Importances
@@ -86,18 +85,18 @@ Based on the coefficients from the Linear Regression model, we can derive insigh
 - R²: 0.63
 
 ### Lasso Regression:
-- Mean CV RMSE: 8934.65
-- Test RMSE: 8845.29
+- Mean CV RMSE: 8934.51
+- Test RMSE: 8845.08
 - R²: 0.63
 
 ### Decision Tree:
-- Mean CV RMSE: 6432.42
-- Test RMSE: 6154.53
+- Mean CV RMSE: 6422.88
+- Test RMSE: 6187.57
 - R²: 0.82
 
 ### Random Forest:
-- Mean CV RMSE: 4976.42
-- Test RMSE: 4859.50
+- Mean CV RMSE: 4975.25
+- Test RMSE: 4863.73
 - R²: 0.89
 
 ### XGBoost:
@@ -106,15 +105,6 @@ Based on the coefficients from the Linear Regression model, we can derive insigh
 - R²: 0.82
 
 ### Actionable Insights Recommendations:
-- Business Insights: Use the findings to inform pricing strategies, inventory management, marketing efforts. Focus on high-impact features like year, odometer, drive type, and fuel type to maximize sales and profitability.
-- Consumer Preferences: Consider market preferences for different manufacturers, vehicle types, and fuel types to better align inventory with demand.
-- Further Analysis: Conduct deeper analysis on non-linear models like Decision Trees, Random Forests, and XGBoost to capture more complex relationships and improve prediction accuracy.
-- Model Performance Metrics: Evaluation metrics like RMSE (Root Mean Squared Error) and R² (coefficient of determination) should be used to assess the model's accuracy.
-- Model Stability: Random Forest is generally robust and less prone to overfitting compared to single decision trees, leading to more reliable predictions.
-- Feature Importances: Random Forest provides a clear view of which features are most important, helping to understand the key drivers of car prices.
-- Non-Linear Relationships: Random Forest captures non-linear relationships and interactions between features, making it suitable for complex datasets like used car prices.
-- Feature Engineering: Explore additional features and interactions between existing features to enhance model performance.
-- Hyperparameter Tuning: Fine-tune model parameters to achieve better results.
 
 ## Modeling Recommendations
 - Non-Linear Models: Given the superior performance of non-linear models like Random Forest and XGBoost, prioritize these models for future analysis. They capture complex relationships in the data more effectively than linear models.
@@ -131,6 +121,3 @@ Based on the coefficients from the Linear Regression model, we can derive insigh
 - Inventory Management: Consider the importance of drive type and fuel efficiency in your inventory decisions. Vehicles with front-wheel drive and fuel-efficient options like four-cylinder engines are more desirable and should be prioritized. Ensure cars in good or new condition are well-represented in your inventory. These cars tend to have higher market values and can contribute to increased profitability.
 - Consumer Preferences: Align your inventory with consumer preferences highlighted by the model. For example, if the model indicates a higher preference for certain manufacturers or types, adjust your acquisition strategy accordingly.
 - Marketing and Sales: Highlight Key Features in marketing materials and sales pitches, highlight key features that add value, such as low mileage, recent model years, and popular manufacturers. Use the insights to create targeted promotions for high-value cars, leveraging the model's findings to attract more customers and close more sales.
-
-
-
